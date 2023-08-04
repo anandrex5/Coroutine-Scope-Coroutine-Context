@@ -41,14 +41,14 @@ class MainActivity : AppCompatActivity() {
 
         //Launch Coroutines
         CoroutineScope(Dispatchers.IO).launch {
-            Log.d("TAG", "${Thread.currentThread().name}")
+            Log.d("TAG", "1- ${Thread.currentThread().name}")
         }
         GlobalScope.launch(Dispatchers.Main)
         {
-            Log.d("TAG", "${Thread.currentThread().name}")
+            Log.d("TAG", "2- ${Thread.currentThread().name}")
         }
         MainScope().launch ( Dispatchers.Default){
-            Log.d("TAG", "${Thread.currentThread().name}")
+            Log.d("TAG", "3- ${Thread.currentThread().name}")
         }
     }
 }
